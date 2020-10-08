@@ -25,7 +25,7 @@ exports.new = function (req, res) {
     book.pages = req.body.pages;
     book.genre = req.body.genre;
     book.item_count = req.body.item_count;
-    // save the contact and check for errors
+
     book.save(function (err) {
         if (err) {
             return res.json({
@@ -70,7 +70,7 @@ exports.update = function (req, res) {
         book.pages = req.body.pages;
         book.genre = req.body.genre;
         book.item_count = req.body.item_count;
-    // save the contact and check for errors
+
         book.save(function (err) {
             if (err) {
                 return res.json({
@@ -88,7 +88,7 @@ exports.update = function (req, res) {
 
 // Handle delete contact
 exports.delete = function (req, res) {
-    Book.remove({
+    Book.deleteOne({
         _id: req.params.book_id
     }, function (err, book) {
         if (err) {

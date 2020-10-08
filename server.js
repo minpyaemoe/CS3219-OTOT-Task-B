@@ -15,8 +15,10 @@ app.use('/api', apiRoutes);
 
 const db = dbconnection();
 
-app.get('/', (req, res) => res.send('Hello World with Express'));
+app.get('/', (req, res) => res.send('Welcome from Book Inventory with Express'));
 
 app.listen(port, function () {
-    console.log("Running RestHub on port " + port);
+    console.log("Running server on port " + port);
 });
+
+module.exports = app
