@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "test": "mocha tests/*.js --exit"
+    "test": "MONGODB_URI=mongodb://localhost/CS3219Test mocha tests/*.js --exit"
   },
   "repository": {
     "type": "git",
