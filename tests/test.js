@@ -21,16 +21,16 @@ describe("Books",  function() {
             });
         });
 
-        // // Test to get all book records
-        // it("should get all book records", (done) => {
-        //     chai.request(app)
-        //         .get('/api/books')
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             res.body.should.be.a('object');
-        //             done();
-        //         });
-        // });
+        // Test to get all book records
+        it("should get all book records", (done) => {
+            chai.request(app)
+                .get('/api/books')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    done();
+                });
+        });
 
         // Test to get a book record
         it("should get a book record", (done) => {

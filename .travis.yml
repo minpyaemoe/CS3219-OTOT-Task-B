@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - '12'
-  services:
+services:
   - mongodb
 install: 
   - npm install
