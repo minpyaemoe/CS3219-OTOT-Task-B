@@ -40,7 +40,7 @@ exports.new = function (req, res) {
     });
 };
 
-// Handle view contact info
+// Handle view book info
 exports.view = function (req, res) {
     Book.findById(req.params.book_id, function (err, book) {
         if (err) {
@@ -56,7 +56,7 @@ exports.view = function (req, res) {
     });
 };
 
-// Handle update contact info
+// Handle update book info
 exports.update = function (req, res) {
     Book.findById(req.params.book_id, function (err, book) {
         if (err) {
@@ -86,7 +86,7 @@ exports.update = function (req, res) {
     });
 };
 
-// Handle delete contact
+// Handle delete book
 exports.delete = function (req, res) {
     Book.deleteOne({
         _id: req.params.book_id

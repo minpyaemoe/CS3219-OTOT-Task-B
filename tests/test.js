@@ -56,7 +56,7 @@ describe("Books",  function() {
                  });
         });
 
-        // Test to get single student record
+        // Test to get single a book record
         it("should not get a single student record", (done) => {
             chai.request(app)
                 .get(`/api/books/${dummyBookid}`)
