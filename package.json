@@ -4,7 +4,7 @@
   "description": "CS3219 OTOT Task B Server",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js",
+    "server": "nodemon runner.js",
     "test": "MONGODB_URI=mongodb://localhost/CS3219Test mocha tests/*.js --exit"
   },
   "repository": {
