@@ -1,0 +1,19 @@
+service: cs3219-OTOT-PartB
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: ap-southeast-1
+  memorySize: 512
+
+package:
+  exclude:
+    - 'tests/**'
+    - 'dummy/**'
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - http: ANY /
+      - http: ANY {proxy+}

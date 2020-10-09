@@ -1,6 +1,7 @@
 node_modules
 .idea
 .idea/vcs.xml
+.serverless
 # Build and Release Folders
 bin-debug/
 bin-release/
