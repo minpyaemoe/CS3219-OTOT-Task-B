@@ -4,7 +4,14 @@ node_js:
 services:
   - mongodb
 install: 
+  - npm install -g serverless
   - npm install
 script:
   - npm test
-  - serverless deploy
+deploy:
+  skip_cleanup : true
+  provider: script
+  script: serverless deploy
+  on:
+    branch: main
+  
