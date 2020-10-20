@@ -1,12 +1,14 @@
 const express = require('express')
 const app = express()
 const serverless = require('serverless-http');
+const cors = require('cors');
 
 let bodyParser = require('body-parser');
 
 const apiRoutes = require("./api_routes/routes");
 const dbconnection = require("./connections/dbconnection");
 
+app.use(cors())
 app.use(bodyParser.urlencoded({
     extended: true
  }));

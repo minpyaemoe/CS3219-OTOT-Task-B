@@ -10,6 +10,7 @@ package:
   exclude:
     - 'tests/**'
     - 'dummy/**'
+    - 'client/**'
 
 functions:
   api:
