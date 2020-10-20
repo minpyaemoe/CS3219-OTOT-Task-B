@@ -79,8 +79,8 @@
                 axios.get(
                     "https://omdwbfqiu8.execute-api.ap-southeast-1.amazonaws.com/dev/api/books"
                 ).then((res) => {
-                    this.books = res.data.books
-                    alert(this.books)
+                    this.books = res.data.data;
+                    alert(JSON.stringify(this.books))
                 }).catch((err) => alert(err));
             }
         },

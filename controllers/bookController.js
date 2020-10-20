@@ -12,7 +12,7 @@ exports.index = function (req, res) {
         return res.json({
             status: "success",
             message: "Books retrieved successfully",
-            data: books
+            books: books
         });
     });
 };
@@ -35,7 +35,7 @@ exports.new = function (req, res) {
         }
         return res.json({
             message: 'New book created!',
-            data: book
+            book: book
         });
     });
 };
@@ -51,7 +51,7 @@ exports.view = function (req, res) {
         }
         return res.json({
             message: 'Book details loading..',
-            data: book
+            book: book
         });
     });
 };
@@ -80,7 +80,7 @@ exports.update = function (req, res) {
             }
             return res.json({
                 message: 'Book Info updated',
-                data: book
+                book: book
             });
         });
     });
