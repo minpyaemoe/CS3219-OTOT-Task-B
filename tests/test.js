@@ -39,7 +39,7 @@ describe("Books",  function() {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property("message", "Book details loading..");
-                    res.body.should.not.have.property("data", null);
+                    res.body.should.not.have.property("book", null);
                     res.body.should.be.a('object');
                     done();
                  });
@@ -63,7 +63,7 @@ describe("Books",  function() {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property("message", "Book details loading..");
-                    res.body.should.have.property("data", null);
+                    res.body.should.have.property("book", null);
                     done();
                  });
         });
