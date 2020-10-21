@@ -12,6 +12,9 @@ app.use(cors())
 app.use(bodyParser.urlencoded({
     extended: true
  }));
+app.use(bodyParser.json());
+
+
 app.use('/api', apiRoutes);
 
 const db = dbconnection();

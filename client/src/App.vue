@@ -6,7 +6,7 @@
       dark
     >
       <div class="d-flex align-center">
-        <h1>Welcome from Book Store</h1>
+        <h1>Welcome from Book Inventory</h1>
       </div>
     </v-app-bar>
 

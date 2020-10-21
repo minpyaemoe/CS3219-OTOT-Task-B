@@ -20,6 +20,7 @@ exports.index = function (req, res) {
 // Handle create book actions
 exports.new = function (req, res) {
     var book = new Book();
+
     book.title = req.body.title ? req.body.title : book.title;
     book.author = req.body.author;
     book.pages = req.body.pages;
