@@ -72,7 +72,7 @@
                                         <div>
                                             <v-btn
                                                     class="mr-4"
-                                                    color="blue darken-1"
+                                                    color="black"
                                                     elevation="2"
                                                     @click="popup = false"
                                             >
@@ -80,7 +80,7 @@
                                             </v-btn>
                                             <v-btn
                                                     class="ml-4"
-                                                    color="blue darken-1"
+                                                    color="black"
                                                     elevation="2"
                                                     @click="editBook()"
                                             >
@@ -191,6 +191,11 @@
         methods: {
             setID: function (book) {
                 this.editingBookId = book._id;
+                this.newTitle = book.title;
+                this.newAuthor = book.author;
+                this.newPages = book.pages;
+                this.newGenre = book.genre;
+                this.new_Item_Count = book.item_count;
             },
 
 
@@ -218,7 +223,7 @@
                 if (confirm("Please confirm if you want to delete this books.")) {
                     axios.delete(
                         "https://omdwbfqiu8.execute-api.ap-southeast-1.amazonaws.com/dev/api/books/" + book._id
-                    ).then((response) => console.log(response))
+                    ).then((response) => alert(JSON.stringify(response)))
 
                     setTimeout(function () {
                         location.reload();
@@ -236,7 +241,7 @@
                 }
                 axios.put(
                     "https://omdwbfqiu8.execute-api.ap-southeast-1.amazonaws.com/dev/api/books/" + this.editingBookId, newBook
-                ).then((response) => alert(response)).catch((err) => alert(err));
+                ).then((response) => alert(JSON.stringify(response))).catch((err) => alert(err));
 
                 this.popup = false;
                 //
