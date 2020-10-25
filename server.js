@@ -1,25 +1,15 @@
 const express = require('express')
+const serveStatic = require('serve-static')
+const path = require('path')
+
 const app = express()
-const serverless = require('serverless-http');
-const cors = require('cors');
 
-let bodyParser = require('body-parser');
+app.use('/', serveStatic(path.join(__dirname, '/dist')))
 
-const apiRoutes = require("./api_routes/routes");
-const dbconnection = require("./connections/dbconnection");
+app.get(/.*/, function (req, res) {
+    res.sendFile(path.join(__dirname, '/dist/index.html'))
+})
 
-app.use(cors())
-app.use(bodyParser.urlencoded({
-    extended: true
- }));
-app.use(bodyParser.json());
-
-
-app.use('/api', apiRoutes);
-
-const db = dbconnection();
-
-app.get('/', (req, res) => res.send('Welcome from Book Inventory with Express'));
-
-module.exports = app
-module.exports.handler = serverless(app)
+const port = process.env.PORT || 8080
+app.listen(port)
+console.log(`app is listening on port: ${port}`)
