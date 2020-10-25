@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon runner.js",
+    "start" : "node runner.js",
     "test": "MONGODB_URI=mongodb://localhost/CS3219Test mocha tests/*.js --exit"
   },
   "repository": {
